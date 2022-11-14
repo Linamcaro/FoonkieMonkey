@@ -30,17 +30,24 @@ val Typography = Typography(
     */
 )
 
-val TitleFontStyle = TextStyle(
+val Title1FontStyle = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 30.sp,
         textAlign = TextAlign.Center,
         color = TextBlack,
 )
 
+val Title2FontStyle = TextStyle(
+    fontWeight = FontWeight.Normal,
+    fontSize = 18.sp,
+    textAlign = TextAlign.Center,
+    color = TextWhite,
+)
+
 val ContentFontStyle = TextStyle(
     fontWeight = FontWeight.Light,
     fontSize = 12.sp,
-    textAlign = TextAlign.Center,
+    textAlign = TextAlign.Start,
     color = TextBlack,
 )
 

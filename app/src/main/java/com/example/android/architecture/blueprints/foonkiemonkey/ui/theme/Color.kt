@@ -18,6 +18,7 @@ val Box3 = Color(0xFF29ABE1)
 
 //Content Text
 val TextBlack = Color(0xFF000000)
+val TextWhite = Color(0xFFFFFFFF)
 
 //Buttons
 val ButtonText = Color(0xFF29ABE1)

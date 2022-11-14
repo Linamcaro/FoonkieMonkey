@@ -51,14 +51,18 @@ val ContentFontStyle = TextStyle(
     color = TextBlack,
 )
 
+val ContentFontStyle2 = TextStyle(
+    fontWeight = FontWeight.Light,
+    fontSize = 12.01.sp,
+    textAlign = TextAlign.End,
+    color = TextWhite
+)
+
 val GetInTouchButtonText = TextStyle(
     fontWeight = FontWeight.Normal,
-    fontSize = 15.22.sp,
     textAlign = TextAlign.Center,
     color = ButtonText,
 )
-
-
 
 
 val DmSerifDisplay = FontFamily(

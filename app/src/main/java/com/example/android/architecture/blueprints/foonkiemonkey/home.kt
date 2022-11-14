@@ -9,11 +9,11 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.android.architecture.blueprints.foonkiemonkey.ui.theme.*
 
 @Preview
@@ -22,50 +22,66 @@ fun Home() {
 
     Scaffold(floatingActionButton = { Fab() }) {
 
-            Box(
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
+        ) {
+
+            Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .verticalScroll(rememberScrollState()),
-                ) {
+            ) {
 
-                Column( modifier = Modifier
-                    .fillMaxSize()) {
+                Box1Content(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(695.65.dp)
+                        .background(color = Box1)
+                )
 
-                    Box1Content(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(695.65.dp)
-                            .background(color = Box1)
-                    )
+                Box2Content(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(830.51.dp)
+                        .background(color = Box2)
+                )
 
-                    Box2Content(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(968.dp)
-                            .background(color = Box2)
-                    )
-
-                }
-                MonkeyImage1(modifier = Modifier
-
+                Box3Content(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(574.dp)
+                        .background(color = Box3)
+                )
+            }
+            MonkeyImage1(
+                modifier = Modifier
                     .align(Alignment.TopCenter)
                     .padding(top = 378.dp)
-                    )
+            )
 
-            }
+            MonkeyImage2(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(
+                        bottom = 283.95.dp,
+                        end = 77.dp
+                    )
+                    .offset(x = (-54).dp)
+            )
+
+        }
 
     }
 
 }
-
-
 
 @Composable
 private fun Box1Content(modifier: Modifier = Modifier) {
 
     Column(
         modifier = modifier
-            .fillMaxWidth()
+            .fillMaxSize()
             .padding(top = 50.72.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -77,9 +93,10 @@ private fun Box1Content(modifier: Modifier = Modifier) {
 
             Divider(
                 modifier = Modifier
-                    .width(57.07.dp)
                     .padding(top = 22.56.dp)
-            )
+                    .width(57.07.dp),
+                color = TextBlack,
+                thickness = 0.18.dp)
 
             Text(
                 text = stringResource(id = R.string.expert_samu),
@@ -97,30 +114,32 @@ private fun Box1Content(modifier: Modifier = Modifier) {
                 style = ContentFontStyle,
             )
 
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .padding(top = 21.77.dp),
-                shape = getInTouch,
-                colors = buttonColors(backgroundColor = ButtonColor)
-            ) {
-
-                Text(
-                    text = stringResource(id = R.string.get_in_touch),
-                    fontFamily = DmSerifDisplay,
-                    style = GetInTouchButtonText
-                )
-
-            }
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .padding(top = 21.77.dp)
+                .height(34.67.dp)
+                .width(121.75.dp),
+            shape = getInTouch,
+            colors = buttonColors(backgroundColor = ButtonColor)
+        ) {
+            Text(
+                text = stringResource(id = R.string.get_in_touch),
+                fontFamily = DmSerifDisplay,
+                style = GetInTouchButtonText,
+                fontSize = 15.22.sp
+            )
+        }
     }
 }
+
 
 @Composable
 private fun Box2Content(modifier: Modifier = Modifier) {
 
     Column(
         modifier = modifier
-            .fillMaxWidth()
+            .fillMaxSize()
             .padding(top = 115.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.Start
@@ -130,20 +149,108 @@ private fun Box2Content(modifier: Modifier = Modifier) {
             text = stringResource(id = R.string.box2_title),
             modifier = Modifier
                 .padding(
-                    start = 53.dp,
-                    end = 109.dp),
+                    start = 53.dp),
             fontFamily = DmSerifDisplay,
             style = Title2FontStyle
         )
 
-        Divider(
-            modifier = Modifier
-                .width(57.07.dp)
-                .padding(top = 22.56.dp)
-        )
+        Divider(modifier = Modifier
+            .padding(
+                top = 4.82.dp,
+                start = 53.dp)
+            .width(49.83.dp),
+            color = TextWhite,
+            thickness = 0.32.dp)
 
     }
 }
+
+@Composable
+private fun Box3Content(modifier: Modifier = Modifier) {
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(top = 97.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.End
+    ) {
+
+        Text(
+            text = stringResource(id = R.string.box3_title),
+            modifier = Modifier
+                .padding(
+                    end = 30.dp),
+            fontFamily = DmSerifDisplay,
+            style = Title2FontStyle,
+            fontSize = 24.sp
+        )
+
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier.padding(
+                top = 43.72.dp,
+                end = 30.dp)
+                .width(103.dp)
+                .height(29.33.dp),
+            shape = getInTouch,
+            colors = buttonColors(backgroundColor = ButtonColor)
+        ) {
+            Text(
+                text = stringResource(id = R.string.get_in_touch),
+                fontFamily = DmSerifDisplay,
+                style = GetInTouchButtonText,
+                fontSize = 12.sp
+            )
+        }
+
+        Divider(modifier = Modifier
+            .padding(
+                top = 53.67.dp,
+                end = 36.dp)
+            .width(51.54.dp),
+            color = TextWhite,
+            thickness = 0.34.dp)
+
+        MonkeyLogo(modifier = Modifier
+            .padding(
+                top = 22.dp,
+                end = 35.57.dp)
+            .height(66.08.dp)
+            .width(124.43.dp))
+
+        Text(
+            text = stringResource(id = R.string.office_locations),
+            modifier = Modifier
+                .padding(
+                    top = 16.31.dp,
+                    end = 36.05.dp),
+            fontFamily = Rubik,
+            style = ContentFontStyle2
+        )
+
+        Divider(modifier = Modifier
+            .padding(
+                top = 20.06.dp,
+                end = 36.dp)
+            .width(51.54.dp),
+            color = TextWhite,
+            thickness = 0.34.dp)
+
+        Text(
+            text = stringResource(id = R.string.fm_id),
+            modifier = Modifier
+                .padding(
+                    top = 20.06.dp,
+                    end = 36.42.dp),
+            fontFamily = Rubik,
+            style = ContentFontStyle2
+        )
+
+
+    }
+}
+
 
 /* Button */
 
@@ -163,7 +270,7 @@ fun Fab() {
 /*  Drawables */
 
 @Composable
-fun MonkeyLogo(modifier: Modifier = Modifier) {
+private fun MonkeyLogo(modifier: Modifier = Modifier) {
     
     Image(
         painter = painterResource(id = R.drawable.foonkie_monkey_logo),
@@ -186,11 +293,13 @@ private fun MonkeyImage1(modifier: Modifier = Modifier) {
 
 
 @Composable
-private fun MonkeyImage2() {
+private fun MonkeyImage2(modifier: Modifier = Modifier) {
     Image(
         painter = painterResource(id = R.drawable.foonkie_monkey_2),
         contentDescription = "Samurai Monkey 2",
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier
+            .height(329.56.dp)
+            .width(352.dp)
     )
 }
 

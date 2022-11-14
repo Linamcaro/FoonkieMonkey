@@ -11,4 +11,13 @@
 
     <string name="box2_title">Case studies</string>
 
+
+    <string name="box3_title">Let’s work\ntogether!</string>
+
+    <string name="office_locations">Bogotá \nCalle 106 # 54-15 of. 307/308\n\n
+        Harpenden, UK: \nHarpenden Hall, Southdown Rd\n\n
+        Miami, USA: \n990 Biscayne Blvd #501\n\n\n\n\n\n\n\n</string>
+
+    <string name="fm_id">Foonkie Monkey 2021</string>
+
 </resources>

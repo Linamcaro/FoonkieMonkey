@@ -1,5 +1,10 @@
 package com.example.android.architecture.blueprints.foonkiemonkey
 
+import android.content.ActivityNotFoundException
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -9,6 +14,7 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -79,6 +85,8 @@ fun Home() {
 @Composable
 private fun Box1Content(modifier: Modifier = Modifier) {
 
+    val context = LocalContext.current
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -115,7 +123,7 @@ private fun Box1Content(modifier: Modifier = Modifier) {
             )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { context.sendEmail() },
             modifier = Modifier
                 .padding(top = 21.77.dp)
                 .height(34.67.dp)
@@ -168,6 +176,8 @@ private fun Box2Content(modifier: Modifier = Modifier) {
 @Composable
 private fun Box3Content(modifier: Modifier = Modifier) {
 
+    val context = LocalContext.current
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -187,7 +197,7 @@ private fun Box3Content(modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { context.sendEmail() },
             modifier = Modifier.padding(
                 top = 43.72.dp,
                 end = 30.dp)
@@ -304,3 +314,29 @@ private fun MonkeyImage2(modifier: Modifier = Modifier) {
 }
 
 
+fun  Context.sendEmail(){
+
+    val subject = "I want a quote"
+    val body = "I need you to build an application"
+
+    val sendIntent = Intent(Intent.ACTION_VIEW).apply {
+        val data = Uri.parse("mailto:?subject=" + subject + "&body=" + body)
+        setData(data)
+    }
+
+
+    try {
+
+        startActivity(sendIntent)
+
+    } catch (e: ActivityNotFoundException) {
+
+        Toast.makeText(
+            this,
+            "Could not find a mail application installed",
+            Toast.LENGTH_SHORT
+        ).show()
+
+    }
+
+}

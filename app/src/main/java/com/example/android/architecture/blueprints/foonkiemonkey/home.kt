@@ -21,6 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.android.architecture.blueprints.foonkiemonkey.ui.theme.*
+import dagger.hilt.android.AndroidEntryPoint
+
 
 @Preview
 @Composable
@@ -313,17 +315,16 @@ private fun MonkeyImage2(modifier: Modifier = Modifier) {
     )
 }
 
-
+/* intent */
 fun  Context.sendEmail(){
 
     val subject = "I want a quote"
     val body = "I need you to build an application"
 
     val sendIntent = Intent(Intent.ACTION_VIEW).apply {
-        val data = Uri.parse("mailto:?subject=" + subject + "&body=" + body)
+        val data = Uri.parse("mailto:?subject=$subject&body=$body")
         setData(data)
     }
-
 
     try {
 

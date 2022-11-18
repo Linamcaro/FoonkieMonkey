@@ -11,8 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.android.architecture.blueprints.foonkiemonkey.ui.theme.FoonkieMonkeyTheme
-import com.example.android.architecture.blueprints.foonkiemonkey.usersList.UserList
-import com.example.android.architecture.blueprints.foonkiemonkey.usersList.UsersListView
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -27,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    UserList()
+                    Home()
                 }
             }
         }

@@ -21,7 +21,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.android.architecture.blueprints.foonkiemonkey.ui.theme.*
-import dagger.hilt.android.AndroidEntryPoint
 
 @Preview
 @Composable

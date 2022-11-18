@@ -21,9 +21,9 @@ constructor(private val repository: UsersRepository) : ViewModel(){
         get() = _response
 
 
-     fun getUsersList() {
+     fun getUsersList(page: Int) {
          viewModelScope.launch {
-             repository.getUserPage().let { response ->
+             repository.getUserPage(page).let { response ->
                  if(response.isSuccessful){
                      val userEntries = response.body()?.data?.map{  UserInfo ->
                          val number = UserInfo.avatar.takeLastWhile { it.isDigit() }

@@ -8,8 +8,6 @@ class UsersRepository
 @Inject
 constructor(private val apiService: ApiService){
 
-    suspend fun getUserPage()  = apiService.getUserPage()
-
-    //suspend fun getUserPage(page: Int)  = apiService.getUserPage(page)
+    suspend fun getUserPage(page : Int)  = apiService.getUserPage(page)
 
 }

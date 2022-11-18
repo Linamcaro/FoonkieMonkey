@@ -37,7 +37,7 @@ fun UserList(usersListViewModel: UsersListViewModel = hiltViewModel()) {
 
     val userList by usersListViewModel.responseUserList.observeAsState()
 
-    Button(onClick = { usersListViewModel.getUsersList()
+    Button(onClick = { usersListViewModel.getUsersList(1)
     }) {
     }
 

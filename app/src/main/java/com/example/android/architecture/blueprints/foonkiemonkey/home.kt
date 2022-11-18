@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.sp
 import com.example.android.architecture.blueprints.foonkiemonkey.ui.theme.*
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @Preview
 @Composable
 fun Home() {

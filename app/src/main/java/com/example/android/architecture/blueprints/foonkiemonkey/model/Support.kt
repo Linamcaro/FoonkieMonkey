@@ -1,3 +1,6 @@
 package com.example.android.architecture.blueprints.foonkiemonkey.model
 
-class Users : ArrayList<UsersList>()
+data class Support(
+    val text: String,
+    val url: String
+)

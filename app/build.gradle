@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.example.android.architecture.blueprints.foonkiemonkey'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.android.architecture.blueprints.foonkiemonkey"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -77,7 +77,7 @@ dependencies {
     //Dagger - Hilt
     implementation "com.google.dagger:hilt-android:$daggerhilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$daggerhilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltlifecycle_version"
+
     kapt "androidx.hilt:hilt-compiler:$hilt_version"
     implementation "androidx.hilt:hilt-navigation-compose:$hiltnav_version"
 
@@ -87,6 +87,7 @@ dependencies {
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$liveData_version"
 
     //Room and lifecycle dependencies
     implementation "androidx.room:room-runtime:$room_version"
